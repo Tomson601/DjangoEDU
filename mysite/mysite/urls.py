@@ -20,4 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),      # Tworzy patern URL aplikacji, który zawiera plik /polls/urls.py
+                                                # Funkcja include() pozwala na odniesienie się do innych URL'confów
+                                                # Funkcji include() używamy do podłączania URL'ów (wyjątek stanowi admin)
 ]
