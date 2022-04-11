@@ -8,4 +8,4 @@ def index(request):                     # Zdefiniowanie requestu
     return HttpResponse("Hello, world") # Zwrócenie "Hello, world"
 
 def getting(request):
-    return  HttpResponse("getting polls...")
+    return  HttpResponse("getting some polls...")
