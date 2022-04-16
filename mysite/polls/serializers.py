@@ -10,3 +10,8 @@ class CarSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Car
         fields = ('id', 'brand', 'model', 'price', 'is_broken')
+
+class ClockSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.Clock
+        fields = ('id', 'brand', 'time', 'price')

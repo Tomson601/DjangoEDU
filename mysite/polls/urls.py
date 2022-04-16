@@ -1,3 +1,4 @@
+from email.mime import base
 from posixpath import basename
 from django.urls import path
 from django.conf.urls import include, url
@@ -8,9 +9,10 @@ from . import views                                                             
 router = routers.DefaultRouter()
 router.register("coffee", views.CoffeeViewSet, basename="coffee")
 router.register("car", views.CarViewSet, basename="car")
+router.register("clock", views.ClockViewSet, basename="clock")
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('getting/', views.getting, name='getting'),    # 1-Nazwa url, 2- views.X 3- nazwa
+    path('getting/', views.getting, name='getting'),
     url(r"^", include(router.urls)),
 ]

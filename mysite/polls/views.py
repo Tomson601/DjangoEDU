@@ -20,3 +20,6 @@ class CarViewSet(ModelViewSet):
     queryset = models.Car.objects.all()
     serializer_class = serializers.CarSerializer
     
+class ClockViewSet(ModelViewSet):
+    queryset = models.Clock.objects.all()
+    serializer_class = serializers.ClockSerializer

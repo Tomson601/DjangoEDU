@@ -33,3 +33,8 @@ class Car(models.Model):
     model = models.CharField(max_length=50)
     price = models.FloatField(max_length=100)
     is_broken = models.BooleanField(default=False)
+
+class Clock(models.Model):
+    time = models.TimeField('Manufactured time')
+    brand = models.CharField(max_length=20)
+    price = models.FloatField(max_length=20, default=69.99)
