@@ -3,11 +3,10 @@ from django.http import HttpResponse
 from polls import serializers, models
 from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
-# Tworzymy widok, który trzeba zmapowować z URL'em
+# Creating ViewSet for model
 
-def index(request):                     # Zdefiniowanie requestu
-    return HttpResponse("Hello, world") # Zwrócenie "Hello, world"
+def index(request):
+    return HttpResponse("Hello, world") # Returning "Hello, world" on the site
 
 def getting(request):
     return  HttpResponse("getting polls...")

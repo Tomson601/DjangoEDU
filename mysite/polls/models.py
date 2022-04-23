@@ -1,5 +1,6 @@
 from operator import mod
 from pickle import FALSE
+from pyexpat import model
 from django.db import models
 from django.utils import timezone
 import datetime
@@ -45,3 +46,6 @@ class Car(models.Model):
     is_broken = models.BooleanField(default=False)
 
     user = models.ForeignKey(User, related_name="cars", on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):                                                                                  # Formating output data
+        return "Brand: " + self.brand + " Model: " + self.model                                         # Function will return brand and model
