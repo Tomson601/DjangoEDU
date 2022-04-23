@@ -10,9 +10,11 @@ print("Δ = ", delta(a, b, c))
 
 if delta(a, b, c) < 0:
     print("Δ is lower than 0, equation has no solutions")
-if delta(a, b, c) == 0:
+
+elif delta(a, b, c) == 0:
     x = (-1*b)/(2*a)
     print("x = ", x)
+    
 else:
     print("Formula has 2 roots:")
     x1 = ((-b)-(sqrt(delta(a, b, c))))/(2*a)
