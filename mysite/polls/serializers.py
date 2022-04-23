@@ -1,3 +1,4 @@
+from dataclasses import fields
 from rest_framework import serializers
 from polls import models                                                            # Importing models from polls 
 
@@ -15,3 +16,8 @@ class ClockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Clock
         fields = ('id', 'brand', 'time', 'price')
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.User
+        fields = ('id', 'name', 'age')

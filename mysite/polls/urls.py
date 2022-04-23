@@ -10,6 +10,7 @@ router = routers.DefaultRouter()
 router.register("coffee", views.CoffeeViewSet, basename="coffee")
 router.register("car", views.CarViewSet, basename="car")
 router.register("clock", views.ClockViewSet, basename="clock")
+router.register("user", views.UserViewSet, basename="user")
 
 urlpatterns = [
     path('', views.index, name='index'),

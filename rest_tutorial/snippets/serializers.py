@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
+from django.contrib.auth.models import User, Group
 
 
 class SnippetSerializer(serializers.ModelSerializer):
@@ -17,3 +18,13 @@ class SnippetSerializer(serializers.ModelSerializer):
             "language": obj.get_language_display(),
             "style": obj.get_style_display()
         }
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ['url', 'username', 'email', 'groups']
+
+
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Group
+        fields = ['url', 'name']

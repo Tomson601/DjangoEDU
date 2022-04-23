@@ -38,3 +38,8 @@ class Clock(models.Model):
     time = models.TimeField('Manufactured time')
     brand = models.CharField(max_length=20)
     price = models.FloatField(max_length=20, default=69.99)
+
+class User(models.Model):
+    name = models.CharField(max_length=50)
+    age = models.CharField(max_length=50)
+    acccount_type = models.CharField(max_length=50, default="User")
