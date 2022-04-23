@@ -28,12 +28,6 @@ class Coffee(models.Model):
     brand = models.CharField(max_length=30)
     tasty = models.BooleanField(default=True)
 
-class Car(models.Model):
-    brand = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
-    price = models.FloatField(max_length=100)
-    is_broken = models.BooleanField(default=False)
-
 class Clock(models.Model):
     time = models.TimeField('Manufactured time')
     brand = models.CharField(max_length=20)
@@ -42,4 +36,12 @@ class Clock(models.Model):
 class User(models.Model):
     name = models.CharField(max_length=50)
     age = models.CharField(max_length=50)
-    acccount_type = models.CharField(max_length=50, default="User")
+    account_type = models.CharField(max_length=50, default="User")
+
+class Car(models.Model):
+    brand = models.CharField(max_length=50)
+    model = models.CharField(max_length=50)
+    price = models.FloatField(max_length=100)
+    is_broken = models.BooleanField(default=False)
+
+    user = models.ForeignKey(User, related_name="cars", on_delete=models.SET_NULL, null=True)
