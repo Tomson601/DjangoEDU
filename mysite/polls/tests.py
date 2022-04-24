@@ -1,5 +1,6 @@
 from mimetypes import init
-from .models import Car, User, Clock
+from urllib import response
+from .models import Car, Dog, User, Clock
 from django.test import Client
 import pytest
 
@@ -26,3 +27,13 @@ class TestUser:                                                                 
 
         assert response.status_code == 200
         assert response.json() == [{'brand': 'MegaCar',  'id': 1,  'is_broken': False,  'model': 'xd',  'price': 21.0,  'user': 1}]
+    
+    def test_dog(self):
+        c = Client()
+
+        dpg = Dog.objects.create(name = "Piesel")
+
+        response = c.get("/polls/dog/")
+
+        assert response.status_code == 200
+        assert response.json() == [{'id': 1, 'name': 'Piesel'}]

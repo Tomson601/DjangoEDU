@@ -26,3 +26,7 @@ class ClockViewSet(ModelViewSet):
 class UserViewSet(ModelViewSet):
     queryset = models.User.objects.all()
     serializer_class = serializers.UserSerializer
+
+class DogViewSet(ModelViewSet):
+    queryset = models.Dog.objects.all()
+    serializer_class = serializers.DogSerializer

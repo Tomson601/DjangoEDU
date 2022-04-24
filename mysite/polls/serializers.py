@@ -23,3 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = models.User
         fields = ('id', 'name', 'age', 'account_type', 'cars')
         
+class DogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Dog
+        fields = ('id', 'name')

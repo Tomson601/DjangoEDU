@@ -11,6 +11,7 @@ router.register("coffee", views.CoffeeViewSet, basename="coffee")
 router.register("cars", views.CarViewSet, basename="cars")
 router.register("clock", views.ClockViewSet, basename="clock")
 router.register("users", views.UserViewSet, basename="users")
+router.register("dog", views.DogViewSet, basename="dog")
 
 urlpatterns = [
     path('', views.index, name='index'),

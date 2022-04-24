@@ -1,6 +1,7 @@
 from operator import mod
 from pickle import FALSE
 from pyexpat import model
+from this import d
 from django.db import models
 from django.utils import timezone
 import datetime
@@ -49,3 +50,9 @@ class Car(models.Model):
 
     def __str__(self):                                                                                  # Formating output data
         return "Brand: " + self.brand + " Model: " + self.model                                         # Function will return brand and model
+
+class Dog(models.Model):
+    name = models.CharField(max_length=20)
+    
+    def __str__(self):
+        return self.name
